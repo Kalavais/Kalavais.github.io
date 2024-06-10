@@ -1,88 +1,81 @@
+
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #f9f7f3;
-    color: #333;
-    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333; /* Dark text color */
 }
 
 .game-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
     text-align: center;
+    background-color: #fff; /* White background for game container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(5, 50px);
+    grid-template-columns: repeat(5, 60px); /* Fixed width for tiles */
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .tile {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    background-color: #e6e6e6; /* Light gray */
-    color: #333;
-    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid transparent; /* Transparent border initially */
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    font-size: 24px;
+    text-transform: uppercase;
+    background-color: #e6e6e6; /* Light gray background for tiles */
+    color: #333;
+    border-radius: 50%; /* Circular shape for tiles */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 .keyboard {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for keyboard buttons */
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .key {
-    width: 50px;
-    height: 50px;
-    background-color: #f5f5f5; /* Light gray */
-    color: #333;
+    width: 60px;
+    height: 60px;
+    background-color: #333; /* Dark gray background for keyboard buttons */
+    border: none;
+    color: #fff;
     font-size: 18px;
-    border-radius: 50%;
-    border: 2px solid transparent;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    border-radius: 50%; /* Circular shape for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .key.wide {
-    grid-column: span 2;
+    grid-column: span 2; /* Span two columns for wide buttons */
 }
 
-.correct.tile {
-    background-color: #6ee15d; /* Light green for correct letters in the right position */
-    color: #fff;
-    border-color: #6ee15d;
+.correct {
+    background-color: #68c24d; /* Green for correct letters */
 }
 
-.present.tile {
-    background-color: #fbbf49; /* Yellow for correct letters in the wrong position */
-    color: #333;
-    border-color: #fbbf49;
+.present {
+    background-color: #fbbf49; /* Yellow for present but in wrong position */
 }
 
-.absent.tile {
-    background-color: #555; /* Dark gray for absent letters */
-    color: #fff;
-    border-color: #555;
+.absent {
+    background-color: #333; /* Dark gray for absent letters */
 }
 
 .message {
