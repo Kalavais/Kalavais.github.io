@@ -1,0 +1,92 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f9f7f3;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background-color: #dedede;
+    color: #333;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 18px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.key.wide {
+    grid-column: span 2;
+}
+
+.correct.tile {
+    background-color: #3c9e39;
+    color: #fff;
+    border-color: #3c9e39;
+}
+
+.present.tile {
+    background-color: #fed92c;
+    color: #333;
+    border-color: #fed92c;
+}
+
+.absent.tile {
+    background-color: #555;
+    color: #fff;
+    border-color: #555;
+}
+
+.message {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
