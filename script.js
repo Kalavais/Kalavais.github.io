@@ -57,15 +57,16 @@ function handleDeletePress() {
 
 function handleEnterPress() {
     if (!gameActive || currentTile < 5) return;
+
     const guess = [];
     for (let i = 0; i < 5; i++) {
-        guess.push(document.getElementById(`tile-${i}`).textContent.toLowerCase()); // Lowercase letters
+        guess.push(document.getElementById(`tile-${i}`).textContent.toLowerCase());
     }
     const guessWord = guess.join("");
 
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${i}`);
-        const key = tile.textContent.toLowerCase(); // Lowercase letters
+        const key = tile.textContent.toLowerCase();
         const keyButton = document.querySelector(`button[data-key="${key}"]`);
         if (answer[i] === key) {
             tile.classList.add("correct");
@@ -93,40 +94,13 @@ function handleEnterPress() {
         gameActive = false;
         restartButton.style.display = "block";
     }
-}
 
-function displayMessage(msg) {
-    message.textContent = msg;
-}
-
-function restartGame() {
-    currentRow = 0;
-    currentTile = 0;
-    gameActive = true;
-    message.textContent = "";
-    restartButton.style.display = "none";
-    const tiles = document.querySelectorAll(".tile");
-    tiles.forEach((tile) => {
-        tile.textContent = "";
-        tile.classList.remove("correct", "present", "absent");
-    });
-    const keys = document.querySelectorAll(".key");
-    keys.forEach((key) => key.classList.remove("correct", "present", "absent"));
-}
-
-createBoard();
-createKeyboard();
-
-document.addEventListener("keydown", (e) => {
-    if (!gameActive) return;
-    const key = e.key.toLowerCase(); // Lowercase letters
-    if (key === "enter") {
-        handleEnterPress();
-    } else if (key === "backspace") {
-        handleDeletePress();
-    } else if (key.match(/^[a-z]$/) && key.length === 1) {
-        handleKeyPress(key);
-    }
-});
-
-restartButton.addEventListener("click", restartGame);
+    // Reset circles
+    setTimeout(() => {
+        const tiles = document.querySelectorAll(".tile");
+        tiles.forEach((tile) => {
+            tile.textContent = "";
+            tile.classList.remove("correct", "present", "absent");
+        });
+        const keys = document.querySelectorAll(".key");
+        keys.forEach((key) => key.classList.remove("correct", "present", "absent"));
