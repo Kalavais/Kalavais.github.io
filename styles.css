@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.word-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.letter-box {
+    width: 50px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.input-container {
+    text-align: center;
+}
+
+.guess-input {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.feedback-container {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
