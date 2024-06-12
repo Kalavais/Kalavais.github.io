@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Super Wordle</h1>
+        <div id="word-container" class="word-container">
+            <div class="letter-box" id="letter-box-1"></div>
+            <div class="letter-box" id="letter-box-2"></div>
+            <div class="letter-box" id="letter-box-3"></div>
+            <div class="letter-box" id="letter-box-4"></div>
+            <div class="letter-box" id="letter-box-5"></div>
+        </div>
+        <div id="input-container">
+            <input type="text" id="guess-input" class="guess-input" maxlength="5">
+            <button id="submit-btn" class="submit-btn">Submit</button>
+        </div>
+        <div id="feedback-container" class="feedback-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
