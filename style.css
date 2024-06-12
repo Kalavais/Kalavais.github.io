@@ -1,84 +1,46 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f5f5f5; /* Light gray background */
-    color: #333; /* Dark text color */
+    background-color: #f0f0f0;
 }
 
-.game-container {
+#game {
     text-align: center;
-    background-color: #fff; /* White background for game container */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
 }
 
-.board {
+#board {
     display: grid;
-    grid-template-columns: repeat(5, 60px); /* Fixed width for tiles */
+    grid-template-columns: repeat(5, 40px);
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.tile {
-    width: 60px;
-    height: 60px;
-    border: 2px solid transparent; /* Transparent border initially */
+.cell {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    text-transform: uppercase;
-    background-color: #e6e6e6; /* Light gray background for tiles */
-    color: #333;
-    border-radius: 50%; /* Circular shape for tiles */
-    transition: border-color 0.3s ease; /* Smooth transition for border color */
-}
-
-.keyboard {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 columns for keyboard buttons */
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.key {
-    width: 60px;
-    height: 60px;
-    background-color: #333; /* Dark gray background for keyboard buttons */
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; /* Circular shape for buttons */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-.key.wide {
-    grid-column: span 2; /* Span two columns for wide buttons */
 }
 
 .correct {
-    background-color: #68c24d; /* Green for correct letters */
+    background-color: green;
 }
 
 .present {
-    background-color: #fbbf49; /* Yellow for present but in wrong position */
+    background-color: yellow;
 }
 
 .absent {
-    background-color: #333; /* Dark gray for absent letters */
+    background-color: lightgrey;
 }
 
-.message {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: bold;
+#guess {
+    margin-bottom: 10px;
 }
